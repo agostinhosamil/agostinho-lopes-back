@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    
+    "target": "es2016",                                  
+    
+    "module": "commonjs",                                
+    "rootDir": "./src",                                  
+    "moduleResolution": "node",                          
+    "baseUrl": "./src",                                  
+    "paths": {                                           
+      "@app/*": ["./app/*"],
+      "@config/*": ["./config/*"],
+      "@controllers": ["./app/controllers"],
+      "@controllers/*": ["./app/controllers/*"],
+      "@models": ["./app/models"],
+      "@models/*": ["./app/models/*"]
+    },                                      
+                                     
+    "typeRoots": [                                       
+      "./node_modules/@types",
+      "./src/@types"
+    ],                
+                        
+    "resolveJsonModule": true,                                                        
+    "allowJs": true,                                     
+    
+    "outDir": "./dist",                                  
+    
+    "esModuleInterop": true,                             
+    
+    "forceConsistentCasingInFileNames": true,            
+
+    "strict": true
+  },
+
+  "include": [
+    "./src/**/*",
+    "./tests/**/*"
+  ]
+}
