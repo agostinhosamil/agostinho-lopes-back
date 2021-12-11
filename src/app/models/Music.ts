@@ -1,10 +1,8 @@
-import knex from '@config/knex'
-
 import { AppModel } from '@models/AppModel'
 
 export interface MusicTypes {
   id?: number
-  name: string
+  name?: string
   year?: number
   description?: string
 }
