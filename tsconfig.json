@@ -1,22 +1,25 @@
 {
   "compilerOptions": {
-    
-    "target": "es2016",                                  
-    
-    "module": "commonjs",                                
-    "rootDir": "./src",                                  
-    "moduleResolution": "node",                          
-    "baseUrl": "./src",                                  
-    "paths": {                                           
-      "@app/*": ["./app/*"],
-      "@config/*": ["./config/*"],
-      "@controllers": ["./app/controllers"],
-      "@controllers/*": ["./app/controllers/*"],
-      "@models": ["./app/models"],
-      "@models/*": ["./app/models/*"]
-    },                                      
-                                     
-    "typeRoots": [                                       
+
+    "target": "es2016",
+
+    "module": "commonjs",
+    "rootDir": ".",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"],
+      "@app": ["./src/app"],
+      "@app/*": ["./src/app/*"],
+      "@config/*": ["./src/config/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@controllers": ["./src/app/controllers"],
+      "@controllers/*": ["./src/app/controllers/*"],
+      "@models": ["./src/app/models"],
+      "@models/*": ["./src/app/models/*"]
+    },
+
+    "typeRoots": [
       "./node_modules/@types",
       "./src/@types"
     ],                
