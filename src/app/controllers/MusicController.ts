@@ -15,7 +15,7 @@ export class MusicController {
   }
 
   async show (req: Request<RequestParamList, MusicTypes>, res: Response<MusicTypes>): Promise<Response> {
-    const music = await Music.findById (req.params.id)
+    const music = await Music.findById<MusicTypes> (req.params.id)
     
     return res.send (music);
   }
