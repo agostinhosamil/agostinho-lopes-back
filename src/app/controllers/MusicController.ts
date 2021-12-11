@@ -31,7 +31,11 @@ export class MusicController {
     const { music: musicDatas } = req.body
     const music = new Music (musicDatas)
 
-    await music.save ()
+    const saveResult = await music.save ()
+
+    if (!saveResult) {
+      return res.status (400).send ()
+    }
 
     return res.send (music)
   }
