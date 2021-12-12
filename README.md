@@ -20,8 +20,8 @@ Poderá usar  o mesmo endpoint para fazer requisições via qualquer outro softw
 
 Algumas opções para tal:
 
-- Insomnia (O que eu usei, [Importar o arquivo 'client-request.json' para testar a API no Insomnia])
-- Posman
+- [Insomnia](https://insomnia.rest/download) (O que eu usei, [Importar o arquivo 'client-request.json' para testar a API no Insomnia])
+- [Posman](https://www.postman.com/)
 
 ### `yarn test`
 
