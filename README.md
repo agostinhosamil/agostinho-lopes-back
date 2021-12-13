@@ -37,7 +37,7 @@ Ferramenta útil para exceução de scripts passando para esses scripts variáve
 
 ### `dotenv`
 
-Ferramenta semelhante a anterior (cross-env), porém ela server para armazenar uma vez as variáveis de ambiente para serem utilizadas dentro da aplicação.
+Ferramenta semelhante a anterior (cross-env), porém ela serve para armazenar uma vez as variáveis de ambiente para serem utilizadas dentro da aplicação.
 
 ### `jest`
 
@@ -46,7 +46,7 @@ Para especificamnte a realização de teste unitários na aplicação.
 
 ### `supertest`
 
-Udado para realizar testes de integração na aplicação express.
+Usado para realizar testes de integração na aplicação express.
 
 ### `ts-jest`
 
