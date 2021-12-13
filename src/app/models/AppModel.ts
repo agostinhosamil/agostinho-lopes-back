@@ -86,7 +86,7 @@ export class AppModel<ModelType = DefaultModelType> {
       if (index === 0) {
         query.where (key, 'like', value)
       } else {
-        query.andWhere (key, 'like', value)
+        query.orWhere (key, 'like', value)
       }
     })
 

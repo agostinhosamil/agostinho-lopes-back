@@ -16,13 +16,16 @@ export class MusicController {
 
   async show (req: Request<RequestParamList, MusicTypes>, res: Response<MusicTypes>): Promise<Response> {
     const music = await Music.findById<MusicTypes> (req.params.id)
-    
-    return res.send (music);
+
+    return res.send (music)
   }
 
   async autocomplete (req: Request<RequestParamList, MusicTypes[]>, res: Response<MusicTypes[]>): Promise<Response> {
-    const musics = await Music.search ({ name: req.params.music_name })
-    
+    const musics = await Music.search ({
+      name: req.params.music_name,
+      description: req.params.music_name
+    })
+
     return res.send (musics)
   }
 
