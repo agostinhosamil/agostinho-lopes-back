@@ -1,4 +1,4 @@
-# Primeiros passos com Criar aplicativo React
+# agostinho-lopes-back
 
 Este projeto foi inicializado com [Yarn](https://github.com/yarnpkg/yarn).
 Ele foi desenvolvido em [Typescript](https://typescriptlang.org).
