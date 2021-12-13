@@ -21,7 +21,7 @@ Usado para criar o servidor http e fazer o tratamento das requisições.
 
 Usado para fazer as requisições ao banco de dados, uma ferramenta que além de permitir a abstração de comandos SQL, trás consigo aplicadas vários critérios de segurança mantendo assim a aplicação mais performática e segura.
 
-### `mysql`, ``mysql2`
+### `mysql`, `mysql2`
 
 Dependências do ```knex```, são ferramentas que interagem  diretamente com o driver do mysql.
 
@@ -41,23 +41,25 @@ Ferramenta semelhante a anterior (cross-env), porém ela server para armazenar u
 
 ### `jest`
 
-...
+Usado para testar a aplicação.
+Para especificamnte a realização de teste unitários na aplicação.
 
 ### `supertest`
 
-...
+Udado para realizar testes de integração na aplicação express.
 
 ### `ts-jest`
 
-...
+Preset do JEST para integração com o typescript.
 
 ### `ts-node-dev`
 
-...
+Pacote para habilitar o hot reload do servidor para cada alteração feita no código.
 
 ### `tsconfig-paths`
 
-...
+Pacote para habilitar os atalhos de caminhos (path aliases).
+Usado para mapear os caminhos mais comuns da aplicação reduzindo a verbozidade no momento da importação dos arquivos.
 
 
 ### `babel (@babel/core)`
