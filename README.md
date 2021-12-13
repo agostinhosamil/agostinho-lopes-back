@@ -11,7 +11,7 @@ Instala todas as dependências necessárias para a aplicação rodar. Rodar esse
 
 ### `cors`
 
-Usado para ...
+Usado para permitir ou bloquear requisiçoes de servidores terceiros.
 
 ### `express`
 
