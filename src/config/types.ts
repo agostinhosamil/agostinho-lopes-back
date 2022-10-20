@@ -1,8 +1,11 @@
+type DatabaseConfigProperty = string
+
+type DatabaseNumberProperty = string | number
 export interface DatabaseConfig {
-  type: string
-  name: string
-  host: string
-  port: string | number
-  user: string
-  pass: string
+  type: DatabaseConfigProperty
+  name: DatabaseConfigProperty
+  host: DatabaseConfigProperty
+  port: DatabaseNumberProperty
+  user: DatabaseConfigProperty
+  pass: DatabaseConfigProperty
 }

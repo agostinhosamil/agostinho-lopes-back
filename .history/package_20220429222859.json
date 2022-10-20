@@ -8,8 +8,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development DEBUG=* ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --no-notify src/index.ts",
     "pretest": "cross-env NODE_ENV=test DEBUG=app:log knex migrate:latest && knex seed:run --specific=02_truncate_musics.ts",
-    "test": "cross-env NODE_ENV=test DEBUG=app:log jest --passWithNoTests",
-    "build": "babel src --out-dir dist --extensions \".js,.ts\" --copy-files --no-copy-ignored"
+    "test": "cross-env NODE_ENV=test DEBUG=app:log jest --passWithNoTests"
   },
   "dependencies": {
     "cors": "^2.8.5",
