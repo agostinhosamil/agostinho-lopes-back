@@ -1,5 +1,7 @@
-if (process.env.NODE_ENV !== 'production') {
+const nodeENV: string = `${process.env.NODE_ENV}`
+
+if (['development', 'test'].indexOf(nodeENV) >= 0) {
   require('dotenv/config')
 }
 
-export const env: string = process.env.NODE_ENV || 'development'
+export const env: string = nodeENV || 'development'
