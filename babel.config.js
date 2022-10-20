@@ -32,6 +32,7 @@ module.exports = {
 
   ignore: [
     '**/*.spec.js',
-    "**/*.d.ts"
+    "**/*.d.ts",
+    "tests"
   ]
 }

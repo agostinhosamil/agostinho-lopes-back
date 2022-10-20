@@ -1,7 +1,7 @@
 {
   "name": "agostinho-lopes-back",
   "version": "1.0.0",
-  "main": "./dist/index.js",
+  "main": "dist/index.js",
   "repository": "https://github.com/agostinhosamil/agostinho-lopes-back.git",
   "author": "Agostinho Saml <agostinhosaml832@gmail.com>",
   "license": "MIT",
@@ -9,7 +9,9 @@
     "dev": "cross-env NODE_ENV=development DEBUG=* ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --no-notify src/index.ts",
     "pretest": "cross-env NODE_ENV=test DEBUG=app:log knex migrate:latest && knex seed:run --specific=02_truncate_musics.ts",
     "test": "cross-env NODE_ENV=test DEBUG=app:log jest --passWithNoTests",
-    "build": "babel src --out-dir dist --extensions \".js,.ts\" --copy-files --no-copy-ignored"
+    "build": "babel src --out-dir dist --extensions \".js,.ts\" --copy-files --no-copy-ignored",
+    "start": "node dist/index.js",
+    "start:dev": "cross-env NODE_ENV=production DEBUG=app:log node dist/index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
