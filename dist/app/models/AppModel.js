@@ -51,12 +51,12 @@ class AppModel {
   }
 
   get modelClassName() {
-    return (0, _pluralize.pluralize)(this.constructor.name);
+    return (0, _pluralize.pluralize)(this.constructor.name).toLowerCase();
   }
 
   static get modelClassName() {
     const Sel = this;
-    return (0, _pluralize.pluralize)(new Sel().constructor.name);
+    return new Sel().modelClassName;
   }
 
   static async all() {

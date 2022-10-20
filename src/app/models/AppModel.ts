@@ -13,80 +13,80 @@ export class AppModel<ModelType = DefaultModelType> {
 
   protected requireds: string[] = []
 
-  constructor (data?: ModelType) {
-    Object.assign (this.modelDatas, data)
+  constructor(data?: ModelType) {
+    Object.assign(this.modelDatas, data)
   }
 
-  get (property: string): any {
-    if (typeof this.modelDatas [property as keyof DefaultModelType] !== typeof undefined) {
-      return this.modelDatas [property as keyof DefaultModelType]
+  get(property: string): any {
+    if (typeof this.modelDatas[property as keyof DefaultModelType] !== typeof undefined) {
+      return this.modelDatas[property as keyof DefaultModelType]
     }
   }
 
-  set (property: string, value: any) {
-    this.modelDatas [property as keyof DefaultModelType] = value
+  set(property: string, value: any) {
+    this.modelDatas[property as keyof DefaultModelType] = value
   }
 
-  private fillProps () {
-    this.modelDatas.created_at = new Date ();
-    this.modelDatas.updated_at = new Date ();
+  private fillProps() {
+    this.modelDatas.created_at = new Date();
+    this.modelDatas.updated_at = new Date();
   }
 
-  async save (): Promise<boolean | void> {
-    this.fillProps ()
+  async save(): Promise<boolean | void> {
+    this.fillProps()
 
     for (const requiredProp of this.requireds) {
-      if (!this.get (requiredProp)) return
+      if (!this.get(requiredProp)) return
     }
 
-    await knex<DefaultModelType> (this.modelClassName)
-      .insert (this.modelDatas)
+    await knex<DefaultModelType>(this.modelClassName)
+      .insert(this.modelDatas)
 
     return true
   }
 
-  toJson (): DefaultModelType {
+  toJson(): DefaultModelType {
     return this.modelDatas;
   }
 
-  get modelClassName () {
-    return pluralize (this.constructor.name)
+  get modelClassName() {
+    return pluralize(this.constructor.name).toLowerCase()
   }
 
-  static get modelClassName () {
+  static get modelClassName() {
     const Sel = this
 
-    return pluralize (new Sel().constructor.name)
+    return new Sel().modelClassName
   }
 
-  static async all<ModelType = any> (): Promise<any[]> {
-    const musicList = await knex (this.modelClassName)
-      .select<ModelType[]> ('*')
+  static async all<ModelType = any>(): Promise<any[]> {
+    const musicList = await knex(this.modelClassName)
+      .select<ModelType[]>('*')
 
     return musicList
   }
 
-  static async findById<ModelType = any> (id: number): Promise<ModelType> {
-    const data = await knex (this.modelClassName)
-      .select<ModelType> ('*')
-      .where ({ id })
-      .first ()
+  static async findById<ModelType = any>(id: number): Promise<ModelType> {
+    const data = await knex(this.modelClassName)
+      .select<ModelType>('*')
+      .where({ id })
+      .first()
 
     return data
   }
 
-  static async search<ModelType = any> (queryDatas: ModelType): Promise<ModelType[]> {
+  static async search<ModelType = any>(queryDatas: ModelType): Promise<ModelType[]> {
 
-    const query = knex (this.modelClassName)
-      .select ('*')
+    const query = knex(this.modelClassName)
+      .select('*')
 
-    Object.keys (queryDatas).map ((key, index) => {
-      const value = `%${queryDatas [key as keyof ModelType]}%`
+    Object.keys(queryDatas).map((key, index) => {
+      const value = `%${queryDatas[key as keyof ModelType]}%`
 
       if (index === 0) {
-        query.where (key, 'like', value)
+        query.where(key, 'like', value)
       } else {
-        query.orWhere (key, 'like', value)
+        query.orWhere(key, 'like', value)
       }
     })
 
